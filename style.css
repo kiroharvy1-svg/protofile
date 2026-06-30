@@ -1,0 +1,163 @@
+html{
+   background-color: #000000;
+}
+body {
+    display: flex;
+    justify-content: center; /* توسيط أفقي */
+    align-items: center;     /* توسيط رأسي */
+    min-height: 100vh;       /* عشان يفضل دايماً في نص الشاشة */
+    margin: 0;
+}
+.background-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* خليه 0 بدل -1 */
+ 
+}
+
+.bubble {
+
+  border-radius: 50%;
+  
+  /* 1. التدرج اللوني (اللمعة الأساسية في النص) */
+  background: radial-gradient(circle at 30% 30%, rgb(76, 113, 232) 0%, rgb(255, 255, 255) 70%);
+
+  /* 2. الضل عشان يعطي الإضاءة اللي برا الكورة (اللّمعة الخفية) */
+  box-shadow: 0 0 20px rgb(255, 29, 29), 0 0 40px rgb(16, 198, 222);
+
+  /* 3. عشان الحركة تفضل شغالة */
+  animation: float 10s infinite ease-in-out;
+  pointer-events: none;
+}
+
+
+
+
+/* حركة الكورة (Keyframes) */
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-100px) translateX(50px); }
+}
+.nav-links {
+    display: none;   
+    position: fixed; 
+top: 5%;        
+left: 1%;    
+z-index: 1000;    
+    flex-direction: column; /* دي اللي بتخلي العناصر فوق بعض (بالطول) */
+    gap: 20px;            /* دي المسافة اللي بين كل لينك والتاني (السحر هنا!) */
+    padding: 20px;        /* مسافة جوه المربع البيج */
+    list-style: none;     /* عشان نشيل النقط السوداء اللي جنب اللينكات */
+    background-color: #f5deb3; /* اللون البيج بتاعك */
+    width: 200px;             /* عرض محدد للمربع */
+    border-radius: 10px;      /* تدوير زوايا المربع عشان يبقى شكله أشيك */
+    margin-top: 10px;
+}
+
+
+.nav-links.active {
+  display: flex;
+  
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: 3%;
+  gap: 6%;
+}
+
+.menu-icon {
+  position: fixed; 
+  top: 1%;        
+  left: 1%;    
+  z-index: 1000;   
+display: flex;
+justify-content: flex-start;
+flex-direction: column;
+cursor: pointer;
+width: 30px;
+
+}
+
+.menu-icon span {
+
+width: 80%;
+height: 3px;
+background-color: red ;
+margin: 3px 0;           
+border-radius: 2px;
+
+  
+}
+.nav-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+    
+}
+.nav-links li {
+  margin-bottom: 15px;
+}
+
+.me{
+  position: fixed;
+  z-index: 1;
+  top: 20% !important;
+  left: 45% !important;
+  border-radius: 50%;
+ max-width: 40%;
+}
+
+.Hello{
+  position: fixed;
+  z-index: 1;
+  color: white;
+  top: 39%;
+  left: 47.5%;
+  max-width: 40%;
+}
+.small-about{
+  position: fixed;
+  z-index: 1;
+  color: white;
+  top: 46%;
+  left: 39%;
+  max-width: 40%;
+}
+.more{
+  position: fixed;
+  z-index: 1;
+  color: white;
+  top: 52%;
+  left: 47.5%;
+  
+}
+
+.about{
+  max-width: 40%;
+  position: fixed !important;
+  z-index: 1 !important;
+  top: 15% !important;
+  left: 35.5% !important;
+  color: white;
+  padding: 10%;
+  padding-right: 20%;
+  border-radius: 15px;      /* تدوير الزوايا بيخلي الشكل أشيك */
+  background-color:rgb(181, 158, 28);
+  background-size: cover;
+
+}
+.more a{
+   text-decoration: none;
+   color: white;
+   transition: color 0.5s ease;
+   background-color: #000000;
+   border-radius: 15px;
+   box-sizing: border-box; 
+   padding-left: 6%;
+   padding-right: 6%;
+   white-space: nowrap;
+   font-size: larger;
+}
+.more a:hover{
+  color: red;
+}
