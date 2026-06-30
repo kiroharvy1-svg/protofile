@@ -161,3 +161,16 @@ border-radius: 2px;
 .more a:hover{
   color: red;
 }
+
+/* لما الشاشة تبقى أصغر من 768 بكسل (حجم التابلت والموبايل) */
+@media (max-width: 768px) {
+    .about {
+        position: relative !important; /* نلغي الـ fixed عشان الموبايل */
+        top: auto !important;
+        left: auto !important;
+        width: 90% !important; /* ياخد عرض الشاشة كله تقريباً */
+        margin: 20px auto;     /* يجي في النص */
+        padding: 5% !important; /* تقليل الـ padding عشان يوسع مساحة للنص */
+        max-width: 90% !important;
+    }
+}
