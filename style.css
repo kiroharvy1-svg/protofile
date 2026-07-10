@@ -196,3 +196,9 @@ color: white;
   color: white;
   margin-bottom: 1% !important;
 }
+@media (max-width: 768px) {
+  .img-project-1 {
+   width: 250px;
+   height: 188px;
+  }
+}
